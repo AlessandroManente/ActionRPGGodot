@@ -28,7 +28,6 @@ onready var wanderController = $WanderController
 onready var animationPlayer = $AnimationPlayer
 
 func _ready():
-	animationPlayer.play("Stop")
 	randomize()
 	state = pick_random_state([IDLE, WANDER])
 
