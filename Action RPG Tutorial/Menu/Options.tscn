@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/Options.gd" type="Script" id=1]
+
+[node name="OptionsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.1
+text = "Options Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoButton" type="Button" parent="."]
+margin_left = 9.0
+margin_top = 31.0
+margin_right = 57.0
+margin_bottom = 51.0
+text = "Video"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioButton" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 31.0
+margin_right = 137.0
+margin_bottom = 51.0
+text = "Audio"
+
+[node name="ControlsButton" type="Button" parent="."]
+margin_left = 169.0
+margin_top = 31.0
+margin_right = 234.0
+margin_bottom = 51.0
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 270.0
+margin_top = 31.0
+margin_right = 312.0
+margin_bottom = 51.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
