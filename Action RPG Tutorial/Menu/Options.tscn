@@ -38,10 +38,12 @@ margin_bottom = 51.0
 text = "Audio"
 
 [node name="ControlsButton" type="Button" parent="."]
+visible = false
 margin_left = 169.0
 margin_top = 31.0
 margin_right = 234.0
 margin_bottom = 51.0
+disabled = true
 text = "Controls"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,6 +55,121 @@ margin_top = 31.0
 margin_right = 312.0
 margin_bottom = 51.0
 text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlVideo" type="Control" parent="."]
+visible = false
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonResolution" type="OptionButton" parent="ControlVideo"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 139.0
+margin_bottom = 23.0
+
+[node name="ButtonFullscreen" type="OptionButton" parent="ControlVideo"]
+margin_left = 11.0
+margin_top = 38.0
+margin_right = 140.0
+margin_bottom = 58.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlAudio" type="Control" parent="."]
+visible = false
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMasterMute" type="Button" parent="ControlAudio"]
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 122.0
+margin_bottom = 37.0
+text = "Mute Master"
+
+[node name="ButtonMusicMute" type="Button" parent="ControlAudio"]
+margin_left = 10.0
+margin_top = 48.0
+margin_right = 122.0
+margin_bottom = 68.0
+text = "Mute Music"
+
+[node name="ButtonEffectsMute" type="Button" parent="ControlAudio"]
+margin_left = 10.0
+margin_top = 81.0
+margin_right = 122.0
+margin_bottom = 101.0
+text = "Mute Effects"
+
+[node name="HSliderMaster" type="HSlider" parent="ControlAudio"]
+margin_left = 145.0
+margin_top = 17.0
+margin_right = 296.0
+margin_bottom = 33.0
+
+[node name="HSliderMusic" type="HSlider" parent="ControlAudio"]
+margin_left = 144.0
+margin_top = 49.0
+margin_right = 295.0
+margin_bottom = 65.0
+
+[node name="HSliderEffects" type="HSlider" parent="ControlAudio"]
+margin_left = 144.0
+margin_top = 81.0
+margin_right = 295.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlControls" type="Control" parent="."]
+visible = false
+anchor_top = 0.35
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonUse" type="Button" parent="ControlControls"]
+visible = false
+margin_left = 11.0
+margin_top = 26.0
+margin_right = 115.0
+margin_bottom = 46.0
+disabled = true
+text = "Use"
+
+[node name="ButtonPause" type="Button" parent="ControlControls"]
+visible = false
+margin_left = 12.0
+margin_top = 72.0
+margin_right = 117.0
+margin_bottom = 92.0
+disabled = true
+text = "Pause"
+
+[node name="LabelUse" type="Label" parent="ControlControls"]
+margin_left = 140.0
+margin_top = 28.0
+margin_right = 232.0
+margin_bottom = 42.0
+
+[node name="LabelPause" type="Label" parent="ControlControls"]
+visible = false
+margin_left = 140.0
+margin_top = 73.0
+margin_right = 242.0
+margin_bottom = 87.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

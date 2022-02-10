@@ -68,6 +68,9 @@ func move_state(delta):
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
+	
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene("res://Menu/PauseMenu.tscn")
 
 func roll_state():
 	velocity = roll_vector * ROLL_SPEED

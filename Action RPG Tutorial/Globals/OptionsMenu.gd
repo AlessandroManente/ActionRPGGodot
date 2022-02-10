@@ -5,6 +5,8 @@ extends Control
 const DEFAULT_RES_WIDTH = 320
 const DEFAULT_RES_HEIGHT = 180
 const MAX_VOLUME = 24
+const DEFAULT_VOLUME = 0
+const MIN_VOLUME = -80
 const SAVE_PATH = "res://save.json"
 var settings = {}
 var play_music = 1
@@ -12,14 +14,16 @@ var play_effects = 1
 var new_choice = 1
 var song
 var menu = true
+var paused = false
+var pause_menu = false
 
 onready var music_player = $MusicPlayer
 
 # Saved
 
-var master_volume = MAX_VOLUME
-var music_volume = MAX_VOLUME
-var effects_volume = MAX_VOLUME
+var master_volume = DEFAULT_VOLUME
+var music_volume = DEFAULT_VOLUME
+var effects_volume = DEFAULT_VOLUME
 var master_mute = false
 var music_mute = false
 var effects_mute = false
@@ -30,33 +34,35 @@ var sp_use = 32
 var sp_pause = 16777217
 
 func _ready():
-	# save_game()
+	#save_game()
 	load_game()
-	choose_music()
 	resolution()
+	music_player.volume_db = DEFAULT_VOLUME
+	choose_music()
 	pass
 
-func _process(delta):
-	if !music_player.playing:
-		choose_music()
-	
-	if master_volume > 0 and music_volume > 0:
-		play_music = int(master_volume * music_volume / MAX_VOLUME)
-	else:
-		play_music = 0
-	
-	music_player.volume_db = play_music
-	
-	if master_volume > 0 and effects_volume > 0:
-		play_effects = int(master_volume * effects_volume / MAX_VOLUME)
-	else:
-		play_effects = 0
+func set_master_volume(value):
+	master_volume = min(value, MAX_VOLUME)
+	music_player.volume_db = min(value, master_volume)
+
+func set_music_volume(value):
+	music_volume = min(value, master_volume)
+	music_player.volume_db = music_volume
+
+func set_effects_volume(value):
+	effects_volume = min(value, master_volume)
+
+func stop_music():
+	music_player.stop()
 
 func choose_music():
-	if menu:
-		menu_music()
+	if !master_mute and !music_mute:
+		if menu:
+			menu_music()
+		else:
+			game_music()
 	else:
-		game_music()
+		stop_music()
 
 func menu_music():
 	song = load("res://Music and Sounds/Music.mp3")
@@ -84,7 +90,7 @@ func save_game():
 	var settings = {
 		resolution = {
 			width = res_width,
-			height = res_width
+			height = res_height
 		},
 		fullscreen = fullscreen,
 		master_volume = master_volume,

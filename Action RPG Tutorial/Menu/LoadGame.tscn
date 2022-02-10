@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/LoadGame.gd" type="Script" id=1]
+
+[node name="LoadGame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.1
+text = "Load Game Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save1Button" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 40.0
+margin_right = 111.0
+margin_bottom = 60.0
+text = "Save Slot 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save2Button" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 80.0
+margin_right = 111.0
+margin_bottom = 100.0
+text = "Save Slot 2"
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 30.0
+margin_top = 120.0
+margin_right = 111.0
+margin_bottom = 140.0
+text = "Back"
